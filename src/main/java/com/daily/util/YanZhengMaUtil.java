@@ -150,6 +150,7 @@ public class YanZhengMaUtil {
         try {
             String path="D:/"+new Date().getTime()+".png";
             System.out.println(vCode.getCode()+" >"+path);
+            System.out.println("验证码");
             vCode.write(path);
         } catch (IOException e) {
             e.printStackTrace();
