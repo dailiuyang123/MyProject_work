@@ -103,7 +103,7 @@ public class UserController {
             userService.addUser(map);
             modelAndView.setViewName("");
         }catch (Exception e){
-
+            e.printStackTrace();
         }
         return jsonMessage;
     }
