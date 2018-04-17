@@ -50,9 +50,8 @@ public class ParamUtils {
         ServletInputStream inputStream = null;
         String contentType = request.getHeader("Content-Type").toString();
         if (contentType.contains("application/x-www-form-urlencoded")){
-            Map<String, String[]> parameterMap = request.getParameterMap();
-            paramMap=parameterMap;
-            return paramMap;
+            Map param = getParam(request);
+            return param;
         }
         else {
             try {
