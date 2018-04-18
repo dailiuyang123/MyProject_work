@@ -61,6 +61,7 @@ public class RestUserController {
         if (userByUser!=null){
             Map resultMap=new HashMap();
             resultMap.put("data",userByUser);
+            jsonMessage.setData(resultMap);
             jsonMessage.setResponseCode("0");
         }else {
             jsonMessage.setResponseCode("998");

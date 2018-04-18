@@ -70,7 +70,7 @@
                     }
                     if (passwords.length < 6) {
                         window.alert("密码小于6位，请重新输入");
-                        document.getElementById("passwords").value = '';
+                        document.getElementById("passwords").value ='';
                     }
                     $.ajax({
                         type: "post",
@@ -84,11 +84,16 @@
                         success: function (result) {
                             var data = result.data;
                             if (result.responseCode == '0') {
+                                var pic= data.data.header_picture;
+                                var jsondata=JSON.stringify(data);
+                                console.log(jsondata);
+                                console.log(pic);
                                 console.log("登陆成功");
-                                window.location.href = "home.html"
+                                var uri="home.html?message="+encodeURI(encodeURI(jsondata));
+                                window.location.href = uri;
                             } else if (result.responseCode == "998") {
                                 console.log("登陆失败");
-                                window.location.href = "login.html"
+                                window.location.href = "login.html?message=" + encodeURI("用户名或密码错误，请重新输入");
                             }
                         },
                         error: function () {
