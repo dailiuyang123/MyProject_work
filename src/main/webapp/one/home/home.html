@@ -22,9 +22,14 @@
         var msg = "this is home.html page";
         console.log(msg);
         var datamassage = getQueryString("message");
-        var data = JSON.parse(datamassage);
-        console.log(decodeURI(datamassage));
+        var data= JSON.parse(decodeURI(datamassage));
         console.log(data);
+        var val= data.data.real_name;
+        console.log(val);
+        //加载顺序
+        window.onload=function what(){
+            document.getElementById("msg").innerHTML=val;
+        };
         //获取 URL 上附带的参数
         function getQueryString(name) {
             var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
@@ -43,7 +48,7 @@
         <ul class="message-l">
             <div class="topMessage">
                 <div class="menu-hd">
-                    <a href="login.html" target="_top" class="h">亲，请登录</a>
+                    <a href="login.html" target="_top" class="h"><font id="msg">亲，请登录</font></a>
                     <a href="register.html" target="_top">免费注册</a>
                 </div>
             </div>
