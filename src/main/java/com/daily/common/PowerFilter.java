@@ -52,7 +52,10 @@ public class PowerFilter implements Filter {
 //            }
 //            String str = new String(bytes, charEncoding);
 //            System.out.println(str);
-            Jedis jedis = RedisUtil.getJedis();
+//            Jedis jedis = RedisUtil.getJedis();
+            HttpServletResponse response1 = (HttpServletResponse) response;
+            response1.setHeader("Access-Control-Allow-Origin", "*");
+            response1.setHeader("Access-Control-Allow-Headers","x-requested-with,content-Type");
             chain.doFilter(request,response);
 //            if (token!=null){
 //                Boolean exists = jedis.exists(token);
@@ -68,7 +71,8 @@ public class PowerFilter implements Filter {
 
         }else if ("OPTIONS".equalsIgnoreCase(method)){  //解决跨域问题
             HttpServletResponse response1 = (HttpServletResponse) response;
-            response1.setHeader("Access-Control-Allow-Origin", origin);
+            response1.setHeader("Access-Control-Allow-Origin", "*");
+            response1.setHeader("Access-Control-Allow-Headers","x-requested-with,content-Type");
             chain.doFilter(request,response1);
         }
 

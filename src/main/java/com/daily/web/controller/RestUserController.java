@@ -29,7 +29,6 @@ public class RestUserController {
 
     /**
      * 查找所有用户
-     *
      * @return
      */
     @RequestMapping(value = "/findAll.do", method = RequestMethod.POST)

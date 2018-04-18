@@ -89,6 +89,7 @@ public class UserService {
     **/
      public Map getUserById(Map param){
          String id = param.get("id").toString();
+         System.out.println(id);
          User user = userMapper.selectByPrimaryKey(id);
          Map resultMap=new HashMap();
          resultMap.put("user",user);
