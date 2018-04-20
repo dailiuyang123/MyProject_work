@@ -86,6 +86,10 @@
                             if (result.responseCode == '0') {
                                 var pic= data.data.header_picture;
                                 var jsondata=JSON.stringify(data);
+                                var userId=data.data.id;
+                                window.alert(userId);
+                                //设置cookie
+                                document.cookie="token="+userId;
                                 console.log(jsondata);
                                 console.log(pic);
                                 console.log("登陆成功");
