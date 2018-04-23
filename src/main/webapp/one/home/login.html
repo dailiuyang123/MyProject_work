@@ -89,7 +89,7 @@
                                 var userId=data.data.id;
                                 window.alert(userId);
                                 //设置cookie
-                                document.cookie="token="+userId;
+                                document.cookie="token="+userId+";path=/";
                                 console.log(jsondata);
                                 console.log(pic);
                                 console.log("登陆成功");
