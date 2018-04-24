@@ -48,6 +48,12 @@
     <input type="submit" value="导出">
 </form>
 
+<h1>world 文档读取</h1>
+<hr>
+<form name="readworld" method="post" action="${pageContext.request.contextPath}/word/readWord">
+    <input type="submit" value="导出">
+</form>
+
 <h1>文件上传</h1>
 <hr>
 <form method="post" name="filedowload" action="${pageContext.request.contextPath}/files/upload" enctype="multipart/form-data">

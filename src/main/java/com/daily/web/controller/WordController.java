@@ -2,6 +2,7 @@ package com.daily.web.controller;
 
 import com.daily.mybatis.entity.JsonMessage;
 import com.daily.util.WordGenerator;
+import com.daily.util.WordPOI;
 import org.springframework.stereotype.Controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -84,6 +85,27 @@ public class WordController {
         }
 
     }
+
+    /**
+    *
+    * 作者  json
+    * 时间  2018/4/24 10:32
+    * 描述 读取word 文档
+    *
+    **/
+    @RequestMapping(value ="/readWord",method = RequestMethod.POST)
+    public void readWord(HttpServletRequest request,HttpServletResponse response){
+        WordPOI wordPOI=new WordPOI();
+        try {
+           // wordPOI.ReadWordValue(request,response);
+            wordPOI.testReadByDoc();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
 }
 
 

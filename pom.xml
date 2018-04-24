@@ -329,6 +329,12 @@
             <artifactId>pdfbox</artifactId>
             <version>1.8.4</version>
         </dependency>
+        <!--使用 apache poi 读取word-->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-scratchpad</artifactId>
+            <version>3.2-FINAL</version>
+        </dependency>
         <!--生成 借助Google提供的ZXing Core工具包，使用Java语言实现二维码的生成和解析-->
         <dependency>
             <groupId>com.google.zxing</groupId>
@@ -408,6 +414,7 @@
                     <include>**/*.xlsx</include>
                     <include>**/*.jpg</include>
                     <include>**/*.properties</include>
+                    <include>**/*.docx</include>
                 </includes>
             </resource>
         </resources>
