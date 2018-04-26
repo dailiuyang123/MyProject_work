@@ -8,12 +8,10 @@ import org.apache.poi.xwpf.extractor.XWPFWordExtractor;
 import org.apache.poi.xwpf.usermodel.*;
 import org.apache.xmlbeans.XmlException;
 
+import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -125,13 +123,15 @@ public class WordPOI {
             this.replaceInPara(doc, params);
             //替换表格里面的变量
             this.replaceInTable(doc, params);
+            FileOutputStream outputStream=new FileOutputStream("D:\\poi.doc");
+            doc.write(outputStream);
+            outputStream.close();
+            in.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
 
     }
 

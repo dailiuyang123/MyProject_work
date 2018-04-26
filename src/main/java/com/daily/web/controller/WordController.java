@@ -103,7 +103,27 @@ public class WordController {
             e.printStackTrace();
         }
     }
+    /**
+    *
+    * 作者  json
+    * 时间  2018/4/25 9:32
+    * 描述  利用apache POI 导出
+    *
+    **/
+    @RequestMapping(value = "/exportPOI",method = RequestMethod.POST)
+    public void exportPOI(HttpServletRequest request,HttpServletResponse response){
+        WordPOI wordPOI=new WordPOI();
+        //制造参数
+        Map param=new HashMap();
+        param.put("data","2018-4-25");
+        param.put("address","河南鹿邑");
+        param.put("name","大曲");
+        param.put("one","1");
+        param.put("tow","2");
+        param.put("three","3");
+        wordPOI.TemplateWrite(param,request,response);
 
+    }
 
 
 }
