@@ -22,11 +22,11 @@
 			console.log(msg);
 			var datamassage = getQueryString("message");
 			var data = JSON.parse(decodeURI(datamassage));
-			var token=getCookie("token");
-			if(!token){
+			var token = getCookie("token");
+			if(!token) {
 				window.alert("登陆已失效,请重新登陆");
 			}
-			console.log("token:"+token);
+			console.log("token:" + token);
 			console.log(decodeURI(datamassage));
 			console.log(data);
 			//如果对象 是null 则直接是boolean 类型false
@@ -2943,6 +2943,34 @@
     window.jQuery || document.write('<script src="basic/js/jquery.min.js "><\/script>');
 </script>
 <script type="text/javascript " src="../basic/js/quick_links.js "></script>
+<script type="text/javascript" src="../basic/js/jquery-1.7.min.js"></script>
+<script type="text/javascript ">
+	window.onload=function onloads(){
+		console.log("sssssss");
+		var data={url:"http://localhost:8181/MyProject/restUser/login.do",id:1};
+		console.log(data);
+		getData(data);
+	}
+	
+
+	//动态传参ajax
+	function  getData(data){
+		window.alert("即将执行请求");
+		console.log(data.url);
+		console.log(data.id);
+			$.ajax({
+				type:"post",
+				url:data.url,
+				async:true,
+				data:{id:data.id},
+				success:function(data){
+					console.log(data);
+				},
+				error:function(){console.log("请求失败")}
+			});
+		
+	}
+</script>
 </body>
 
 </html>
