@@ -1,5 +1,6 @@
 package com.daily.web.controller;
 
+import com.daily.util.FreeMarkWordUtil;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import org.springframework.stereotype.Controller;
@@ -81,6 +82,25 @@ public class FreeMarkController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+    *
+    * 作者  json
+    * 时间  2018/4/27 14:56
+    * 描述  利用freeMark 导出word文件
+    *
+    **/
+    @RequestMapping(value = "/freeMarkExport",method = RequestMethod.POST)
+    public void freeMarkExport(HttpServletRequest request,HttpServletResponse response){
+        //制造参数
+        Map param=new HashMap();
+        param.put("company","鹿邑");
+        param.put("name","小明");
+        param.put("sex","男");
+        param.put("age",11);
+        FreeMarkWordUtil freeMarkWordUtil=new FreeMarkWordUtil();
+        freeMarkWordUtil.FreeMarkFactory(request,response,param);
     }
 
 }

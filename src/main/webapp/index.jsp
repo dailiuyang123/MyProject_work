@@ -60,6 +60,12 @@
     <input type="submit" value="导出">
 </form>
 
+<h1>freemarker 文档导出</h1>
+<hr>
+<form name="freemark" method="post" action="${pageContext.request.contextPath}/word/freeMarkExport">
+    <input type="submit" value="导出">
+</form>
+
 <h1>文件上传</h1>
 <hr>
 <form method="post" name="filedowload" action="${pageContext.request.contextPath}/files/upload" enctype="multipart/form-data">
