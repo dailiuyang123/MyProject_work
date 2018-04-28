@@ -17,6 +17,7 @@
 		<link href="../css/skin.css" rel="stylesheet" type="text/css" />
 		<script src="../AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
 		<script src="../AmazeUI-2.4.2/assets/js/amazeui.min.js"></script>
+
 		<script type="text/javascript">
 			var msg = "this is home.html page";
 			console.log(msg);
@@ -34,16 +35,20 @@
 				var val = data.data.real_name;
 				console.log(val);
 				//优先:加载顺序
-				window.onload = function what() {
+				// window.onload 与 $(window).load(); 请优先使用$(window).load();
+				$(window).load(function what() {
+					console.log("jquery正在执行");
 					document.getElementById("msg").innerHTML = val;
 					var cirlden = document.getElementById("msg");
 					console.log(cirlden);
 					//删除某个HTML 元素 通过Jquery
 					$("#menu").remove();
 					//添加 HTML 元素
+					console.log("jquery正在执行");
 					$("#para").append("<font style='color:red' >欢迎您 :" + val + "</font>");
 					//cirlden.parentNode.removeChild("msg");
-				};
+				});
+
 			}
 
 			//获取 URL 上附带的参数
@@ -62,6 +67,15 @@
 					return null;
 			}
 		</script>
+		<script type="text/javascript" src="../js/util.js">
+			$(window).load(function(){
+				console.log("lallalallaal");
+			var fun = startup; //引用abc函数
+				fun(123);
+			});
+			
+		</script>
+	
 	</head>
 
 	<body>
@@ -72,7 +86,6 @@
 					<div class="topMessage">
 						<div class="menu-hd" id="para">
 							<div id="menu">
-
 								<a href="login.html" target="_top" class="h">
 									<font id="msg">亲，请登录</font>
 								</a>
@@ -1393,7 +1406,7 @@
             <h4>活动</h4>
             <h3>每期活动 优惠享不停 </h3>
             <span class="more ">
-                              <a href="introduction.html">全部活动<i class="am-icon-angle-right " style="padding-left:10px ; "></i></a>
+                              <a href="introduction.html ">全部活动<i class="am-icon-angle-right " style="padding-left:10px ; "></i></a>
                         </span>
         </div>
         <div class="am-g am-g-fixed ">
@@ -1454,15 +1467,15 @@
                 <h4>甜品</h4>
                 <h3>每一道甜品都有一个故事</h3>
                 <div class="today-brands ">
-                    <a href="introduction.html">桂花糕</a>
-                    <a href="introduction.html">奶皮酥</a>
-                    <a href="introduction.html">栗子糕 </a>
-                    <a href="introduction.html">马卡龙</a>
-                    <a href="introduction.html">铜锣烧</a>
-                    <a href="introduction.html">豌豆黄</a>
+                    <a href="introduction.html ">桂花糕</a>
+                    <a href="introduction.html ">奶皮酥</a>
+                    <a href="introduction.html ">栗子糕 </a>
+                    <a href="introduction.html ">马卡龙</a>
+                    <a href="introduction.html ">铜锣烧</a>
+                    <a href="introduction.html ">豌豆黄</a>
                 </div>
                 <span class="more ">
-                    <a href="introduction.html">更多美味<i class="am-icon-angle-right " style="padding-left:10px ; "></i></a>
+                    <a href="introduction.html ">更多美味<i class="am-icon-angle-right " style="padding-left:10px ; "></i></a>
                         </span>
             </div>
         </div>
@@ -1470,14 +1483,14 @@
         <div class="am-g am-g-fixed floodFour ">
             <div class="am-u-sm-5 am-u-md-4 text-one list ">
                 <div class="word ">
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
                 </div>
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <div class="outer-con ">
                         <div class="title ">
                             开抢啦！
@@ -1501,7 +1514,7 @@
                     </div>
                     <i class="am-icon-shopping-basket am-icon-md seprate "></i>
                 </div>
-                <a href="introduction.html"><img src="../images/2.jpg "/></a>
+                <a href="introduction.html "><img src="../images/2.jpg "/></a>
             </div>
 
             <div class="am-u-sm-7 am-u-md-4 text-two ">
@@ -1514,7 +1527,7 @@
                     </div>
                     <i class="am-icon-shopping-basket am-icon-md seprate "></i>
                 </div>
-                <a href="introduction.html"><img src="../images/1.jpg "/></a>
+                <a href="introduction.html "><img src="../images/1.jpg "/></a>
             </div>
 
 
@@ -1528,7 +1541,7 @@
                     </div>
                     <i class="am-icon-shopping-basket am-icon-md seprate "></i>
                 </div>
-                <a href="introduction.html"><img src="../images/5.jpg "/></a>
+                <a href="introduction.html "><img src="../images/5.jpg "/></a>
             </div>
 
             <div class="am-u-sm-3 am-u-md-2 text-three sug ">
@@ -1541,7 +1554,7 @@
                     </div>
                     <i class="am-icon-shopping-basket am-icon-md seprate "></i>
                 </div>
-                <a href="introduction.html"><img src="../images/3.jpg "/></a>
+                <a href="introduction.html "><img src="../images/3.jpg "/></a>
             </div>
 
             <div class="am-u-sm-3 am-u-md-2 text-three ">
@@ -1554,7 +1567,7 @@
                     </div>
                     <i class="am-icon-shopping-basket am-icon-md seprate "></i>
                 </div>
-                <a href="introduction.html"><img src="../images/4.jpg "/></a>
+                <a href="introduction.html "><img src="../images/4.jpg "/></a>
             </div>
 
             <div class="am-u-sm-3 am-u-md-2 text-three last big ">
@@ -1567,7 +1580,7 @@
                     </div>
                     <i class="am-icon-shopping-basket am-icon-md seprate "></i>
                 </div>
-                <a href="introduction.html"><img src="../images/5.jpg "/></a>
+                <a href="introduction.html "><img src="../images/5.jpg "/></a>
             </div>
 
         </div>
@@ -1582,29 +1595,29 @@
                 <h4>坚果</h4>
                 <h3>酥酥脆脆，回味无穷</h3>
                 <div class="today-brands ">
-                    <a href="introduction.html">腰果</a>
-                    <a href="introduction.html">松子</a>
-                    <a href="introduction.html">夏威夷果 </a>
-                    <a href="introduction.html">碧根果</a>
-                    <a href="introduction.html">开心果</a>
-                    <a href="introduction.html">核桃仁</a>
+                    <a href="introduction.html ">腰果</a>
+                    <a href="introduction.html ">松子</a>
+                    <a href="introduction.html ">夏威夷果 </a>
+                    <a href="introduction.html ">碧根果</a>
+                    <a href="introduction.html ">开心果</a>
+                    <a href="introduction.html ">核桃仁</a>
                 </div>
                 <span class="more ">
-                    <a href="introduction.html">更多美味<i class="am-icon-angle-right " style="padding-left:10px ; "></i></a>
+                    <a href="introduction.html ">更多美味<i class="am-icon-angle-right " style="padding-left:10px ; "></i></a>
                         </span>
             </div>
         </div>
         <div class="am-g am-g-fixed floodThree ">
             <div class="am-u-sm-4 text-four list ">
                 <div class="word ">
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
                 </div>
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <img src="../images/act1.png "/>
                     <div class="outer-con ">
                         <div class="title ">
@@ -1615,7 +1628,7 @@
                 <div class="triangle-topright "></div>
             </div>
             <div class="am-u-sm-4 text-four ">
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <img src="../images/6.jpg "/>
                     <div class="outer-con ">
                         <div class="title ">
@@ -1629,7 +1642,7 @@
                 </a>
             </div>
             <div class="am-u-sm-4 text-four sug ">
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <img src="../images/7.jpg "/>
                     <div class="outer-con ">
                         <div class="title ">
@@ -1644,7 +1657,7 @@
             </div>
 
             <div class="am-u-sm-6 am-u-md-3 text-five big ">
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <img src="../images/10.jpg "/>
                     <div class="outer-con ">
                         <div class="title ">
@@ -1658,7 +1671,7 @@
                 </a>
             </div>
             <div class="am-u-sm-6 am-u-md-3 text-five ">
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <img src="../images/8.jpg "/>
                     <div class="outer-con ">
                         <div class="title ">
@@ -1672,7 +1685,7 @@
                 </a>
             </div>
             <div class="am-u-sm-6 am-u-md-3 text-five sug ">
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <img src="../images/9.jpg "/>
                     <div class="outer-con ">
                         <div class="title ">
@@ -1686,7 +1699,7 @@
                 </a>
             </div>
             <div class="am-u-sm-6 am-u-md-3 text-five big ">
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <img src="../images/10.jpg "/>
                     <div class="outer-con ">
                         <div class="title ">
@@ -1714,15 +1727,15 @@
                 <h4>甜品</h4>
                 <h3>每一道甜品都有一个故事</h3>
                 <div class="today-brands ">
-                    <a href="introduction.html">桂花糕</a>
-                    <a href="introduction.html">奶皮酥</a>
-                    <a href="introduction.html">栗子糕 </a>
-                    <a href="introduction.html">马卡龙</a>
-                    <a href="introduction.html">铜锣烧</a>
-                    <a href="introduction.html">豌豆黄</a>
+                    <a href="introduction.html ">桂花糕</a>
+                    <a href="introduction.html ">奶皮酥</a>
+                    <a href="introduction.html ">栗子糕 </a>
+                    <a href="introduction.html ">马卡龙</a>
+                    <a href="introduction.html ">铜锣烧</a>
+                    <a href="introduction.html ">豌豆黄</a>
                 </div>
                 <span class="more ">
-                    <a href="introduction.html">更多美味<i class="am-icon-angle-right " style="padding-left:10px ; "></i></a>
+                    <a href="introduction.html ">更多美味<i class="am-icon-angle-right " style="padding-left:10px ; "></i></a>
                         </span>
             </div>
         </div>
@@ -1730,14 +1743,14 @@
         <div class="am-g am-g-fixed floodFour ">
             <div class="am-u-sm-5 am-u-md-4 text-one list ">
                 <div class="word ">
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
                 </div>
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <div class="outer-con ">
                         <div class="title ">
                             开抢啦！
@@ -1761,7 +1774,7 @@
                     </div>
                     <i class="am-icon-shopping-basket am-icon-md seprate "></i>
                 </div>
-                <a href="introduction.html"><img src="../images/2.jpg "/></a>
+                <a href="introduction.html "><img src="../images/2.jpg "/></a>
             </div>
 
             <div class="am-u-sm-7 am-u-md-4 text-two ">
@@ -1774,7 +1787,7 @@
                     </div>
                     <i class="am-icon-shopping-basket am-icon-md seprate "></i>
                 </div>
-                <a href="introduction.html"><img src="../images/1.jpg "/></a>
+                <a href="introduction.html "><img src="../images/1.jpg "/></a>
             </div>
 
 
@@ -1788,7 +1801,7 @@
                     </div>
                     <i class="am-icon-shopping-basket am-icon-md seprate "></i>
                 </div>
-                <a href="introduction.html"><img src="../images/5.jpg "/></a>
+                <a href="introduction.html "><img src="../images/5.jpg "/></a>
             </div>
 
             <div class="am-u-sm-3 am-u-md-2 text-three sug ">
@@ -1801,7 +1814,7 @@
                     </div>
                     <i class="am-icon-shopping-basket am-icon-md seprate "></i>
                 </div>
-                <a href="introduction.html"><img src="../images/3.jpg "/></a>
+                <a href="introduction.html "><img src="../images/3.jpg "/></a>
             </div>
 
             <div class="am-u-sm-3 am-u-md-2 text-three ">
@@ -1814,7 +1827,7 @@
                     </div>
                     <i class="am-icon-shopping-basket am-icon-md seprate "></i>
                 </div>
-                <a href="introduction.html"><img src="../images/4.jpg "/></a>
+                <a href="introduction.html "><img src="../images/4.jpg "/></a>
             </div>
 
             <div class="am-u-sm-3 am-u-md-2 text-three last big ">
@@ -1827,7 +1840,7 @@
                     </div>
                     <i class="am-icon-shopping-basket am-icon-md seprate "></i>
                 </div>
-                <a href="introduction.html"><img src="../images/5.jpg "/></a>
+                <a href="introduction.html "><img src="../images/5.jpg "/></a>
             </div>
 
         </div>
@@ -1842,29 +1855,29 @@
                 <h4>坚果</h4>
                 <h3>酥酥脆脆，回味无穷</h3>
                 <div class="today-brands ">
-                    <a href="introduction.html">腰果</a>
-                    <a href="introduction.html">松子</a>
-                    <a href="introduction.html">夏威夷果 </a>
-                    <a href="introduction.html">碧根果</a>
-                    <a href="introduction.html">开心果</a>
-                    <a href="introduction.html">核桃仁</a>
+                    <a href="introduction.html ">腰果</a>
+                    <a href="introduction.html ">松子</a>
+                    <a href="introduction.html ">夏威夷果 </a>
+                    <a href="introduction.html ">碧根果</a>
+                    <a href="introduction.html ">开心果</a>
+                    <a href="introduction.html ">核桃仁</a>
                 </div>
                 <span class="more ">
-                    <a href="introduction.html">更多美味<i class="am-icon-angle-right " style="padding-left:10px ; "></i></a>
+                    <a href="introduction.html ">更多美味<i class="am-icon-angle-right " style="padding-left:10px ; "></i></a>
                         </span>
             </div>
         </div>
         <div class="am-g am-g-fixed floodThree ">
             <div class="am-u-sm-4 text-four list ">
                 <div class="word ">
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
                 </div>
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <img src="../images/act1.png "/>
                     <div class="outer-con ">
                         <div class="title ">
@@ -1875,7 +1888,7 @@
                 <div class="triangle-topright "></div>
             </div>
             <div class="am-u-sm-4 text-four ">
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <img src="../images/6.jpg "/>
                     <div class="outer-con ">
                         <div class="title ">
@@ -1889,7 +1902,7 @@
                 </a>
             </div>
             <div class="am-u-sm-4 text-four sug ">
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <img src="../images/7.jpg "/>
                     <div class="outer-con ">
                         <div class="title ">
@@ -1904,7 +1917,7 @@
             </div>
 
             <div class="am-u-sm-6 am-u-md-3 text-five big ">
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <img src="../images/10.jpg "/>
                     <div class="outer-con ">
                         <div class="title ">
@@ -1918,7 +1931,7 @@
                 </a>
             </div>
             <div class="am-u-sm-6 am-u-md-3 text-five ">
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <img src="../images/8.jpg "/>
                     <div class="outer-con ">
                         <div class="title ">
@@ -1932,7 +1945,7 @@
                 </a>
             </div>
             <div class="am-u-sm-6 am-u-md-3 text-five sug ">
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <img src="../images/9.jpg "/>
                     <div class="outer-con ">
                         <div class="title ">
@@ -1946,7 +1959,7 @@
                 </a>
             </div>
             <div class="am-u-sm-6 am-u-md-3 text-five big ">
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <img src="../images/10.jpg "/>
                     <div class="outer-con ">
                         <div class="title ">
@@ -1974,15 +1987,15 @@
                 <h4>甜品</h4>
                 <h3>每一道甜品都有一个故事</h3>
                 <div class="today-brands ">
-                    <a href="introduction.html">桂花糕</a>
-                    <a href="introduction.html">奶皮酥</a>
-                    <a href="introduction.html">栗子糕 </a>
-                    <a href="introduction.html">马卡龙</a>
-                    <a href="introduction.html">铜锣烧</a>
-                    <a href="introduction.html">豌豆黄</a>
+                    <a href="introduction.html ">桂花糕</a>
+                    <a href="introduction.html ">奶皮酥</a>
+                    <a href="introduction.html ">栗子糕 </a>
+                    <a href="introduction.html ">马卡龙</a>
+                    <a href="introduction.html ">铜锣烧</a>
+                    <a href="introduction.html ">豌豆黄</a>
                 </div>
                 <span class="more ">
-                    <a href="introduction.html">更多美味<i class="am-icon-angle-right " style="padding-left:10px ; "></i></a>
+                    <a href="introduction.html ">更多美味<i class="am-icon-angle-right " style="padding-left:10px ; "></i></a>
                         </span>
             </div>
         </div>
@@ -1990,14 +2003,14 @@
         <div class="am-g am-g-fixed floodFour ">
             <div class="am-u-sm-5 am-u-md-4 text-one list ">
                 <div class="word ">
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
                 </div>
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <div class="outer-con ">
                         <div class="title ">
                             开抢啦！
@@ -2021,7 +2034,7 @@
                     </div>
                     <i class="am-icon-shopping-basket am-icon-md seprate "></i>
                 </div>
-                <a href="introduction.html"><img src="../images/2.jpg "/></a>
+                <a href="introduction.html "><img src="../images/2.jpg "/></a>
             </div>
 
             <div class="am-u-sm-7 am-u-md-4 text-two ">
@@ -2034,7 +2047,7 @@
                     </div>
                     <i class="am-icon-shopping-basket am-icon-md seprate "></i>
                 </div>
-                <a href="introduction.html"><img src="../images/1.jpg "/></a>
+                <a href="introduction.html "><img src="../images/1.jpg "/></a>
             </div>
 
 
@@ -2048,7 +2061,7 @@
                     </div>
                     <i class="am-icon-shopping-basket am-icon-md seprate "></i>
                 </div>
-                <a href="introduction.html"><img src="../images/5.jpg "/></a>
+                <a href="introduction.html "><img src="../images/5.jpg "/></a>
             </div>
 
             <div class="am-u-sm-3 am-u-md-2 text-three sug ">
@@ -2061,7 +2074,7 @@
                     </div>
                     <i class="am-icon-shopping-basket am-icon-md seprate "></i>
                 </div>
-                <a href="introduction.html"><img src="../images/3.jpg "/></a>
+                <a href="introduction.html "><img src="../images/3.jpg "/></a>
             </div>
 
             <div class="am-u-sm-3 am-u-md-2 text-three ">
@@ -2074,7 +2087,7 @@
                     </div>
                     <i class="am-icon-shopping-basket am-icon-md seprate "></i>
                 </div>
-                <a href="introduction.html"><img src="../images/4.jpg "/></a>
+                <a href="introduction.html "><img src="../images/4.jpg "/></a>
             </div>
 
             <div class="am-u-sm-3 am-u-md-2 text-three last big ">
@@ -2087,7 +2100,7 @@
                     </div>
                     <i class="am-icon-shopping-basket am-icon-md seprate "></i>
                 </div>
-                <a href="introduction.html"><img src="../images/5.jpg "/></a>
+                <a href="introduction.html "><img src="../images/5.jpg "/></a>
             </div>
 
         </div>
@@ -2102,29 +2115,29 @@
                 <h4>坚果</h4>
                 <h3>酥酥脆脆，回味无穷</h3>
                 <div class="today-brands ">
-                    <a href="introduction.html">腰果</a>
-                    <a href="introduction.html">松子</a>
-                    <a href="introduction.html">夏威夷果 </a>
-                    <a href="introduction.html">碧根果</a>
-                    <a href="introduction.html">开心果</a>
-                    <a href="introduction.html">核桃仁</a>
+                    <a href="introduction.html ">腰果</a>
+                    <a href="introduction.html ">松子</a>
+                    <a href="introduction.html ">夏威夷果 </a>
+                    <a href="introduction.html ">碧根果</a>
+                    <a href="introduction.html ">开心果</a>
+                    <a href="introduction.html ">核桃仁</a>
                 </div>
                 <span class="more ">
-                    <a href="introduction.html">更多美味<i class="am-icon-angle-right " style="padding-left:10px ; "></i></a>
+                    <a href="introduction.html ">更多美味<i class="am-icon-angle-right " style="padding-left:10px ; "></i></a>
                         </span>
             </div>
         </div>
         <div class="am-g am-g-fixed floodThree ">
             <div class="am-u-sm-4 text-four list ">
                 <div class="word ">
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
                 </div>
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <img src="../images/act1.png "/>
                     <div class="outer-con ">
                         <div class="title ">
@@ -2135,7 +2148,7 @@
                 <div class="triangle-topright "></div>
             </div>
             <div class="am-u-sm-4 text-four ">
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <img src="../images/6.jpg "/>
                     <div class="outer-con ">
                         <div class="title ">
@@ -2149,7 +2162,7 @@
                 </a>
             </div>
             <div class="am-u-sm-4 text-four sug ">
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <img src="../images/7.jpg "/>
                     <div class="outer-con ">
                         <div class="title ">
@@ -2164,7 +2177,7 @@
             </div>
 
             <div class="am-u-sm-6 am-u-md-3 text-five big ">
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <img src="../images/10.jpg "/>
                     <div class="outer-con ">
                         <div class="title ">
@@ -2178,7 +2191,7 @@
                 </a>
             </div>
             <div class="am-u-sm-6 am-u-md-3 text-five ">
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <img src="../images/8.jpg "/>
                     <div class="outer-con ">
                         <div class="title ">
@@ -2192,7 +2205,7 @@
                 </a>
             </div>
             <div class="am-u-sm-6 am-u-md-3 text-five sug ">
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <img src="../images/9.jpg "/>
                     <div class="outer-con ">
                         <div class="title ">
@@ -2206,7 +2219,7 @@
                 </a>
             </div>
             <div class="am-u-sm-6 am-u-md-3 text-five big ">
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <img src="../images/10.jpg "/>
                     <div class="outer-con ">
                         <div class="title ">
@@ -2234,15 +2247,15 @@
                 <h4>甜品</h4>
                 <h3>每一道甜品都有一个故事</h3>
                 <div class="today-brands ">
-                    <a href="introduction.html">桂花糕</a>
-                    <a href="introduction.html">奶皮酥</a>
-                    <a href="introduction.html">栗子糕 </a>
-                    <a href="introduction.html">马卡龙</a>
-                    <a href="introduction.html">铜锣烧</a>
-                    <a href="introduction.html">豌豆黄</a>
+                    <a href="introduction.html ">桂花糕</a>
+                    <a href="introduction.html ">奶皮酥</a>
+                    <a href="introduction.html ">栗子糕 </a>
+                    <a href="introduction.html ">马卡龙</a>
+                    <a href="introduction.html ">铜锣烧</a>
+                    <a href="introduction.html ">豌豆黄</a>
                 </div>
                 <span class="more ">
-                    <a href="introduction.html">更多美味<i class="am-icon-angle-right " style="padding-left:10px ; "></i></a>
+                    <a href="introduction.html ">更多美味<i class="am-icon-angle-right " style="padding-left:10px ; "></i></a>
                         </span>
             </div>
         </div>
@@ -2250,14 +2263,14 @@
         <div class="am-g am-g-fixed floodFour ">
             <div class="am-u-sm-5 am-u-md-4 text-one list ">
                 <div class="word ">
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
                 </div>
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <div class="outer-con ">
                         <div class="title ">
                             开抢啦！
@@ -2281,7 +2294,7 @@
                     </div>
                     <i class="am-icon-shopping-basket am-icon-md seprate "></i>
                 </div>
-                <a href="introduction.html"><img src="../images/2.jpg "/></a>
+                <a href="introduction.html "><img src="../images/2.jpg "/></a>
             </div>
 
             <div class="am-u-sm-7 am-u-md-4 text-two ">
@@ -2294,7 +2307,7 @@
                     </div>
                     <i class="am-icon-shopping-basket am-icon-md seprate "></i>
                 </div>
-                <a href="introduction.html"><img src="../images/1.jpg "/></a>
+                <a href="introduction.html "><img src="../images/1.jpg "/></a>
             </div>
 
 
@@ -2308,7 +2321,7 @@
                     </div>
                     <i class="am-icon-shopping-basket am-icon-md seprate "></i>
                 </div>
-                <a href="introduction.html"><img src="../images/5.jpg "/></a>
+                <a href="introduction.html "><img src="../images/5.jpg "/></a>
             </div>
 
             <div class="am-u-sm-3 am-u-md-2 text-three sug ">
@@ -2321,7 +2334,7 @@
                     </div>
                     <i class="am-icon-shopping-basket am-icon-md seprate "></i>
                 </div>
-                <a href="introduction.html"><img src="../images/3.jpg "/></a>
+                <a href="introduction.html "><img src="../images/3.jpg "/></a>
             </div>
 
             <div class="am-u-sm-3 am-u-md-2 text-three ">
@@ -2334,7 +2347,7 @@
                     </div>
                     <i class="am-icon-shopping-basket am-icon-md seprate "></i>
                 </div>
-                <a href="introduction.html"><img src="../images/4.jpg "/></a>
+                <a href="introduction.html "><img src="../images/4.jpg "/></a>
             </div>
 
             <div class="am-u-sm-3 am-u-md-2 text-three last big ">
@@ -2347,7 +2360,7 @@
                     </div>
                     <i class="am-icon-shopping-basket am-icon-md seprate "></i>
                 </div>
-                <a href="introduction.html"><img src="../images/5.jpg "/></a>
+                <a href="introduction.html "><img src="../images/5.jpg "/></a>
             </div>
 
         </div>
@@ -2361,29 +2374,29 @@
                 <h4>坚果</h4>
                 <h3>酥酥脆脆，回味无穷</h3>
                 <div class="today-brands ">
-                    <a href="introduction.html">腰果</a>
-                    <a href="introduction.html">松子</a>
-                    <a href="introduction.html">夏威夷果 </a>
-                    <a href="introduction.html">碧根果</a>
-                    <a href="introduction.html">开心果</a>
-                    <a href="introduction.html">核桃仁</a>
+                    <a href="introduction.html ">腰果</a>
+                    <a href="introduction.html ">松子</a>
+                    <a href="introduction.html ">夏威夷果 </a>
+                    <a href="introduction.html ">碧根果</a>
+                    <a href="introduction.html ">开心果</a>
+                    <a href="introduction.html ">核桃仁</a>
                 </div>
                 <span class="more ">
-                    <a href="introduction.html">更多美味<i class="am-icon-angle-right " style="padding-left:10px ; "></i></a>
+                    <a href="introduction.html ">更多美味<i class="am-icon-angle-right " style="padding-left:10px ; "></i></a>
                         </span>
             </div>
         </div>
         <div class="am-g am-g-fixed floodThree ">
             <div class="am-u-sm-4 text-four list ">
                 <div class="word ">
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
                 </div>
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <img src="../images/act1.png "/>
                     <div class="outer-con ">
                         <div class="title ">
@@ -2394,7 +2407,7 @@
                 <div class="triangle-topright "></div>
             </div>
             <div class="am-u-sm-4 text-four ">
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <img src="../images/6.jpg "/>
                     <div class="outer-con ">
                         <div class="title ">
@@ -2408,7 +2421,7 @@
                 </a>
             </div>
             <div class="am-u-sm-4 text-four sug ">
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <img src="../images/7.jpg "/>
                     <div class="outer-con ">
                         <div class="title ">
@@ -2423,7 +2436,7 @@
             </div>
 
             <div class="am-u-sm-6 am-u-md-3 text-five big ">
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <img src="../images/10.jpg "/>
                     <div class="outer-con ">
                         <div class="title ">
@@ -2437,7 +2450,7 @@
                 </a>
             </div>
             <div class="am-u-sm-6 am-u-md-3 text-five ">
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <img src="../images/8.jpg "/>
                     <div class="outer-con ">
                         <div class="title ">
@@ -2451,7 +2464,7 @@
                 </a>
             </div>
             <div class="am-u-sm-6 am-u-md-3 text-five sug ">
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <img src="../images/9.jpg "/>
                     <div class="outer-con ">
                         <div class="title ">
@@ -2465,7 +2478,7 @@
                 </a>
             </div>
             <div class="am-u-sm-6 am-u-md-3 text-five big ">
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <img src="../images/10.jpg "/>
                     <div class="outer-con ">
                         <div class="title ">
@@ -2492,15 +2505,15 @@
                 <h4>甜品</h4>
                 <h3>每一道甜品都有一个故事</h3>
                 <div class="today-brands ">
-                    <a href="introduction.html">桂花糕</a>
-                    <a href="introduction.html">奶皮酥</a>
-                    <a href="introduction.html">栗子糕 </a>
-                    <a href="introduction.html">马卡龙</a>
-                    <a href="introduction.html">铜锣烧</a>
-                    <a href="introduction.html">豌豆黄</a>
+                    <a href="introduction.html ">桂花糕</a>
+                    <a href="introduction.html ">奶皮酥</a>
+                    <a href="introduction.html ">栗子糕 </a>
+                    <a href="introduction.html ">马卡龙</a>
+                    <a href="introduction.html ">铜锣烧</a>
+                    <a href="introduction.html ">豌豆黄</a>
                 </div>
                 <span class="more ">
-                    <a href="introduction.html">更多美味<i class="am-icon-angle-right " style="padding-left:10px ; "></i></a>
+                    <a href="introduction.html ">更多美味<i class="am-icon-angle-right " style="padding-left:10px ; "></i></a>
                         </span>
             </div>
         </div>
@@ -2508,14 +2521,14 @@
         <div class="am-g am-g-fixed floodFour ">
             <div class="am-u-sm-5 am-u-md-4 text-one list ">
                 <div class="word ">
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
                 </div>
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <div class="outer-con ">
                         <div class="title ">
                             开抢啦！
@@ -2539,7 +2552,7 @@
                     </div>
                     <i class="am-icon-shopping-basket am-icon-md seprate "></i>
                 </div>
-                <a href="introduction.html"><img src="../images/2.jpg "/></a>
+                <a href="introduction.html "><img src="../images/2.jpg "/></a>
             </div>
 
             <div class="am-u-sm-7 am-u-md-4 text-two ">
@@ -2552,7 +2565,7 @@
                     </div>
                     <i class="am-icon-shopping-basket am-icon-md seprate "></i>
                 </div>
-                <a href="introduction.html"><img src="../images/1.jpg "/></a>
+                <a href="introduction.html "><img src="../images/1.jpg "/></a>
             </div>
 
 
@@ -2566,7 +2579,7 @@
                     </div>
                     <i class="am-icon-shopping-basket am-icon-md seprate "></i>
                 </div>
-                <a href="introduction.html"><img src="../images/5.jpg "/></a>
+                <a href="introduction.html "><img src="../images/5.jpg "/></a>
             </div>
 
             <div class="am-u-sm-3 am-u-md-2 text-three sug ">
@@ -2579,7 +2592,7 @@
                     </div>
                     <i class="am-icon-shopping-basket am-icon-md seprate "></i>
                 </div>
-                <a href="introduction.html"><img src="../images/3.jpg "/></a>
+                <a href="introduction.html "><img src="../images/3.jpg "/></a>
             </div>
 
             <div class="am-u-sm-3 am-u-md-2 text-three ">
@@ -2592,7 +2605,7 @@
                     </div>
                     <i class="am-icon-shopping-basket am-icon-md seprate "></i>
                 </div>
-                <a href="introduction.html"><img src="../images/4.jpg "/></a>
+                <a href="introduction.html "><img src="../images/4.jpg "/></a>
             </div>
 
             <div class="am-u-sm-3 am-u-md-2 text-three last big ">
@@ -2605,7 +2618,7 @@
                     </div>
                     <i class="am-icon-shopping-basket am-icon-md seprate "></i>
                 </div>
-                <a href="introduction.html"><img src="../images/5.jpg "/></a>
+                <a href="introduction.html "><img src="../images/5.jpg "/></a>
             </div>
 
         </div>
@@ -2620,29 +2633,29 @@
                 <h4>坚果</h4>
                 <h3>酥酥脆脆，回味无穷</h3>
                 <div class="today-brands ">
-                    <a href="introduction.html">腰果</a>
-                    <a href="introduction.html">松子</a>
-                    <a href="introduction.html">夏威夷果 </a>
-                    <a href="introduction.html">碧根果</a>
-                    <a href="introduction.html">开心果</a>
-                    <a href="introduction.html">核桃仁</a>
+                    <a href="introduction.html ">腰果</a>
+                    <a href="introduction.html ">松子</a>
+                    <a href="introduction.html ">夏威夷果 </a>
+                    <a href="introduction.html ">碧根果</a>
+                    <a href="introduction.html ">开心果</a>
+                    <a href="introduction.html ">核桃仁</a>
                 </div>
                 <span class="more ">
-                    <a href="introduction.html">更多美味<i class="am-icon-angle-right " style="padding-left:10px ; "></i></a>
+                    <a href="introduction.html ">更多美味<i class="am-icon-angle-right " style="padding-left:10px ; "></i></a>
                         </span>
             </div>
         </div>
         <div class="am-g am-g-fixed floodThree ">
             <div class="am-u-sm-4 text-four list ">
                 <div class="word ">
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
-                    <a class="outer " href="introduction.html"><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
+                    <a class="outer " href="introduction.html "><span class="inner "><b class="text ">核桃</b></span></a>
                 </div>
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <img src="../images/act1.png "/>
                     <div class="outer-con ">
                         <div class="title ">
@@ -2653,7 +2666,7 @@
                 <div class="triangle-topright "></div>
             </div>
             <div class="am-u-sm-4 text-four ">
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <img src="../images/6.jpg "/>
                     <div class="outer-con ">
                         <div class="title ">
@@ -2667,7 +2680,7 @@
                 </a>
             </div>
             <div class="am-u-sm-4 text-four sug ">
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <img src="../images/7.jpg "/>
                     <div class="outer-con ">
                         <div class="title ">
@@ -2682,7 +2695,7 @@
             </div>
 
             <div class="am-u-sm-6 am-u-md-3 text-five big ">
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <img src="../images/10.jpg "/>
                     <div class="outer-con ">
                         <div class="title ">
@@ -2696,7 +2709,7 @@
                 </a>
             </div>
             <div class="am-u-sm-6 am-u-md-3 text-five ">
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <img src="../images/8.jpg "/>
                     <div class="outer-con ">
                         <div class="title ">
@@ -2710,7 +2723,7 @@
                 </a>
             </div>
             <div class="am-u-sm-6 am-u-md-3 text-five sug ">
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <img src="../images/9.jpg "/>
                     <div class="outer-con ">
                         <div class="title ">
@@ -2724,7 +2737,7 @@
                 </a>
             </div>
             <div class="am-u-sm-6 am-u-md-3 text-five big ">
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <img src="../images/10.jpg "/>
                     <div class="outer-con ">
                         <div class="title ">
@@ -2744,10 +2757,10 @@
     </div>
 
 
-    <div class="footer" id="foot">
-       <script type="text/javascript">
-       	$("#foot").load("../common/foot.html");
-       	console.log("加载了foot.html文件");
+    <div class="footer " id="foot ">
+       <script type="text/javascript ">
+       	$("#foot ").load("../common/foot.html ");
+       	console.log("加载了foot.html文件 ");
        </script>
     </div>
 
@@ -2767,7 +2780,7 @@
     <div id="sidebar ">
         <div id="wrap ">
             <div id="prof " class="item ">
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <span class="setting "></span>
                 </a>
                 <div class="ibar_login_box status_login ">
@@ -2779,15 +2792,15 @@
                         </ul>
                     </div>
                     <div class="login_btnbox ">
-                        <a href="introduction.html" class="login_order ">我的订单</a>
-                        <a href="introduction.html" class="login_favorite ">我的收藏</a>
+                        <a href="introduction.html " class="login_order ">我的订单</a>
+                        <a href="introduction.html " class="login_favorite ">我的收藏</a>
                     </div>
                     <i class="icon_arrow_white "></i>
                 </div>
 
             </div>
             <div id="shopCart " class="item ">
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <span class="message "></span>
                 </a>
                 <p>
@@ -2796,7 +2809,7 @@
                 <p class="cart_num ">0</p>
             </div>
             <div id="asset " class="item ">
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <span class="view "></span>
                 </a>
                 <div class="mp_tooltip ">
@@ -2806,7 +2819,7 @@
             </div>
 
             <div id="foot " class="item ">
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <span class="zuji "></span>
                 </a>
                 <div class="mp_tooltip ">
@@ -2816,7 +2829,7 @@
             </div>
 
             <div id="brand " class="item ">
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <span class="wdsc "><img src="../images/wdsc.png "/></span>
                 </a>
                 <div class="mp_tooltip ">
@@ -2826,7 +2839,7 @@
             </div>
 
             <div id="broadcast " class="item ">
-                <a href="introduction.html">
+                <a href="introduction.html ">
                     <span class="chongzhi "><img src="../images/chongzhi.png "/></span>
                 </a>
                 <div class="mp_tooltip ">
@@ -2837,7 +2850,7 @@
 
             <div class="quick_toggle ">
                 <li class="qtitem ">
-                    <a href="introduction.html"><span class="kfzx "></span></a>
+                    <a href="introduction.html "><span class="kfzx "></span></a>
                     <div class="mp_tooltip ">客服中心<i class="icon_arrow_right_black "></i></div>
                 </li>
                 <!--二维码 -->
@@ -2882,15 +2895,15 @@
         </div>
 
         <div class="ia-head-list ">
-            <a href="introduction.html" target="_blank " class="pl ">
+            <a href="introduction.html " target="_blank " class="pl ">
                 <div class="num ">0</div>
                 <div class="text ">优惠券</div>
             </a>
-            <a href="introduction.html" target="_blank " class="pl ">
+            <a href="introduction.html " target="_blank " class="pl ">
                 <div class="num ">0</div>
                 <div class="text ">红包</div>
             </a>
-            <a href="introduction.html" target="_blank " class="pl money ">
+            <a href="introduction.html " target="_blank " class="pl money ">
                 <div class="num ">￥0</div>
                 <div class="text ">余额</div>
             </a>
@@ -2926,11 +2939,11 @@
     window.jQuery || document.write('<script src="basic/js/jquery.min.js "><\/script>');
 </script>
 <script type="text/javascript " src="../basic/js/quick_links.js "></script>
-<script type="text/javascript" src="../basic/js/jquery-1.7.min.js"></script>
+<script type="text/javascript " src="../basic/js/jquery-1.7.min.js "></script>
 <script type="text/javascript ">
 	window.onload=function onloads(){
-		console.log("sssssss");
-		var data={url:"http://localhost:8181/MyProject/restUser/login.do",id:1};
+		console.log("sssssss ");
+		var data={url:"http://localhost:8181/MyProject/restUser/login.do ",id:1};
 		console.log(data);
 		getData(data);
 	}
@@ -2938,11 +2951,11 @@
 	
 	//动态传参ajax
 	function  getData(data){
-		window.alert("即将执行请求");
+		window.alert("即将执行请求 ");
 		console.log(data.url);
 		console.log(data.id);
 			$.ajax({
-				type:"post",
+				type:"post ",
 				url:data.url,
 				async:true,
 				data:{id:data.id},
@@ -2950,7 +2963,7 @@
 					console.log(data);
 					
 				},
-				error:function(){console.log("请求失败")}
+				error:function(){console.log("请求失败 ")}
 			});
 		
 	}
