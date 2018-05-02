@@ -20,9 +20,105 @@
 		<script type="text/javascript" src="../js/jquery.imagezoom.min.js"></script>
 		<script type="text/javascript" src="../js/jquery.flexslider.js"></script>
 		<script type="text/javascript" src="../js/list.js"></script>
+		<script type="text/javascript">
+			var msg = "this is home.html page";
+			console.log(msg);
+			var datamassage = getQueryString("message");
+			var data = JSON.parse(decodeURI(datamassage));
+			var token = getCookie("token");
+			if(!token) {
+				window.alert("登陆已失效,请重新登陆");
+			}
+			if(token) {
+					var baseurl = "http://localhost:8181/MyProject/restUser/findUserById";
+					console.log(token);
+					$.ajax({
+						type: "post",
+						url: baseurl,
+						async: true,
+						data: {
+							"id": token
+						},
+						dataType: "json",
+						success: function(result) {
+							var data = result.data;
+							console.log(data);
+							var name = data.user.real_name;
+							console.log(name);
+							// window.onload 与 $(window).load(); 请优先使用$(window).load();
+							$(window).load(function what() {
+								console.log("jquery正在执行");
+								document.getElementById("msg").innerHTML = name;
+								var cirlden = document.getElementById("msg");
+								console.log(cirlden);
+								//删除某个HTML 元素 通过Jquery
+								$("#menu").remove();
+								//添加 HTML 元素
+								console.log("jquery正在执行");
+								$("#para").append("<font>欢迎您 :" + name + "</font>");
+								//cirlden.parentNode.removeChild("msg");
+							});
+						},
+						error: function() {
+							window.alert("请求失败，请联系管理员！");
+						}
+					});
+				} else {
+					window.alert("登陆已失效，请重新登陆");
+				}
+			
+			console.log("token:" + token);
+			
 
+			//获取 URL 上附带的参数
+			function getQueryString(name) {
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+				var r = window.location.search.substr(1).match(reg);
+				if(r != null) return unescape(r[2]);
+				return null;
+			}
+			//获取cookie
+			function getCookie(name) {
+				var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+				if(arr = document.cookie.match(reg))
+					return unescape(arr[2]);
+				else
+					return null;
+			}
+		</script>
+		<!--获取商品详情-->
+		<script type="text/javascript">
+			var id='1';
+			var baseurl="http://localhost:8181/MyProject/shop/getShopById";
+			$(window).load(
+				function onloads(){
+					$.ajax({
+						type:"post",
+						url:baseurl,
+						async:true,
+						data:{"id":id},
+						success:function(result){
+							var data=result.data;
+							var list= data.list;
+							var list0=list[0];
+							var pic=list0.shopPictrue;
+							
+							console.log(data);
+							console.log(list0);
+							document.getElementById("imgid").src="../images/"+pic;
+						},
+						error:function(){
+							window.alert("请求失败，请刷新页面");
+						}
+					});
+					
+				}
+				
+			);
+			
+		</script>
 	</head>
-
+		
 	
 	
 	<body>
@@ -76,12 +172,7 @@
 								<li>
 									<img src="../images/01.jpg" title="pic" />
 								</li>
-								<li>
-									<img src="../images/02.jpg" />
-								</li>
-								<li>
-									<img src="../images/03.jpg" />
-								</li>
+								
 							</ul>
 						</div>
 					</section>
@@ -110,19 +201,10 @@
 							<ul class="tb-thumb" id="thumblist">
 								<li class="tb-selected">
 									<div class="tb-pic tb-s40">
-										<a href="#"><img src="../images/01_small.jpg" mid="../images/01_mid.jpg" big="../images/01.jpg"></a>
+										<a href="#" ><img id="imgid" src="../images/01_small.jpg" mid="../images/01_mid.jpg" big="../images/01.jpg"></a>
 									</div>
 								</li>
-								<li>
-									<div class="tb-pic tb-s40">
-										<a href="#"><img src="../images/02_small.jpg" mid="../images/02_mid.jpg" big="../images/02.jpg"></a>
-									</div>
-								</li>
-								<li>
-									<div class="tb-pic tb-s40">
-										<a href="#"><img src="../images/03_small.jpg" mid="../images/03_mid.jpg" big="../images/03.jpg"></a>
-									</div>
-								</li>
+								
 							</ul>
 						</div>
 
