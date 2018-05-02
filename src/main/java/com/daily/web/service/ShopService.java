@@ -1,5 +1,8 @@
 package com.daily.web.service;
 
+import com.daily.mybatis.dao.ShopMapper;
+import com.daily.mybatis.entity.Shop;
+import com.daily.mybatis.entity.ShopExample;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
