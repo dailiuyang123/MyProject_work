@@ -187,8 +187,8 @@ li.person{border-bottom:1px solid #F5F8FA ;padding-bottom:10px;padding-top: 10px
 .am-padding {margin:20px 0px ;}
 .am-text-danger {color: #000}
 /*底部*/
-.footer {text-align:left; display:block;position: relative;margin: 0px auto; padding: 7px 0px 9px;border-top: 2px solid #FF5400; margin-top:20px;}
-.footer .footer-bd p, .footer .footer-hd p {margin-bottom: 8px;line-height: 27px;border-bottom: 1px solid #DDD; text-align:left;}
+.footer {text-align:center; display:block;position: relative;margin: 0px auto; padding: 7px 0px 9px;border-top: 2px solid #FF5400; margin-top:20px;}
+.footer .footer-bd p, .footer .footer-hd p {margin-bottom: 8px;line-height: 27px;border-bottom: 1px solid #DDD; text-align:center;}
 .footer .footer-hd a { margin: 0px 4px;white-space: nowrap;color: #6C6C6C;}
 .footer .footer-hd b { margin: 0px 3px;font-weight: 400;color: #DDD;}
 .footer .footer-bd p{ border-bottom:none;}
