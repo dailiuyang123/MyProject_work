@@ -28,3 +28,15 @@ CREATE TABLE `tbl_shop` (
   `conclum2` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `tbl_talk` (
+  `id` varchar(50) DEFAULT NULL,
+  `shop_id` varchar(50) DEFAULT NULL COMMENT '关联商品id',
+  `type` varchar(100) DEFAULT NULL COMMENT '类型',
+  `title` varchar(255) DEFAULT NULL COMMENT '评论标题',
+  `content` varchar(1000) DEFAULT NULL COMMENT '评论内容',
+  `create_user_name` varchar(100) DEFAULT NULL COMMENT '评论人名',
+  `create_time` datetime DEFAULT NULL,
+  `star` int(11) DEFAULT NULL,
+  `dislike` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
