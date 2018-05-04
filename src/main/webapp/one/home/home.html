@@ -24,6 +24,7 @@
 			var datamassage = getQueryString("message");
 			var data = JSON.parse(decodeURI(datamassage));
 			var token = getCookie("token");
+			var val ;
 			if(!token) {
 				window.alert("登陆已失效,请重新登陆");
 			}
@@ -32,7 +33,10 @@
 			console.log(data);
 			//如果对象 是null 则直接是boolean 类型false
 			if(data) {
-				var val = data.data.real_name;
+				val = data.data.real_name;
+				if(!val){
+					val=datas.user.real_name;
+				}
 				console.log(val);
 				//优先:加载顺序
 				// window.onload 与 $(window).load(); 请优先使用$(window).load();
@@ -50,6 +54,37 @@
 				});
 
 			}
+			//toke n
+			if(token) {
+					var baseurl = "http://localhost:8181/MyProject/restUser/findUserById";
+					console.log(token);
+					$.ajax({
+						type: "post",
+						url: baseurl,
+						async: true,
+						data: {
+							"id": token
+						},
+						dataType: "json",
+						success: function(result) {
+							var data = result.data;
+							console.log(data);
+							var name = data.user.real_name;
+							$("#temp-name1").remove();
+							console.log(name);
+							$("#temp-name").append("<font style='color:black' >姓名:" + name + "</font>");
+
+							//删除某个HTML 元素 通过Jquery
+							$("#menu").remove();
+							//添加 HTML 元素
+							$("#para").append("<font style='color:red' >欢迎您 :" + name + "</font>");
+							//cirlden.parentNode.removeChild("msg");
+						},
+						error: function() {
+							window.alert("请求失败，请联系管理员！");
+						}
+					});
+				}
 
 			//获取 URL 上附带的参数
 			function getQueryString(name) {
@@ -2008,7 +2043,7 @@
 	
 	//动态传参ajax
 	function  getData(data){
-		window.alert("即将执行请求 ");
+		<!--window.alert("即将执行请求 ");-->
 		console.log(data.url);
 		console.log(data.id);
 			$.ajax({

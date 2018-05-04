@@ -96,13 +96,14 @@
 					success: function(result) {
 						var data = result.data;
 						console.log(data);
-						var list= data.list;
-						var talkone=list[0];
-						document.getElementById("shopName").innerHTML=talkone.shopName;
-						var dates= new Date(talkone.createTime);
-						var times= dates.getFullYear()+"年"+dates.getMonth()+"月"+dates.getDay();
-						document.getElementById("createDate").innerHTML=times;
-						document.getElementById("content").innerHTML=talkone.content;
+						var list = data.list;
+						var talkone = list[0];
+						document.getElementById("shopName").innerHTML = talkone.shopName;
+						var dates = new Date(talkone.createTime);
+						var times = dates.getFullYear() + "年" + dates.getMonth() + "月" + dates.getDay();
+						document.getElementById("createDate").innerHTML = times;
+						document.getElementById("content").innerHTML = talkone.content;
+						document.getElementById("img").src = "../images/" + talkone.shopPictrue;
 					},
 					error: function() {
 						window.alert("请求失败");
@@ -126,19 +127,16 @@
 			<div class="nav-cont">
 				<ul>
 					<li class="index">
-						<a href="#">首页</a>
+						<a href="../home/home.html">首页</a>
 					</li>
 					<li class="qc">
-						<a href="#">闪购</a>
+						<a href="../person/blog.html">好物</a>
 					</li>
 					<li class="qc">
-						<a href="#">限时抢</a>
+						<a href="../person/blog.html">好文</a>
 					</li>
 					<li class="qc">
 						<a href="#">团购</a>
-					</li>
-					<li class="qc last">
-						<a href="#">大包装</a>
 					</li>
 				</ul>
 				<div class="nav-extra">
@@ -156,7 +154,7 @@
 
 						<!--标题 -->
 						<div class="am-cf am-padding">
-							<div class="am-fl am-cf"><strong class="am-text-danger am-text-lg">退换货管理</strong> / <small>Change</small></div>
+							<div class="am-fl am-cf"><strong class="am-text-danger am-text-lg">评论管理</strong> / <small>Change</small></div>
 						</div>
 						<hr/>
 
@@ -165,9 +163,6 @@
 							<ul class="am-avg-sm-2 am-tabs-nav am-nav am-nav-tabs">
 								<li class="am-active">
 									<a href="#tab1">评论管理</a>
-								</li>
-								<li>
-									<a href="#tab2">售后管理</a>
 								</li>
 
 							</ul>
@@ -178,7 +173,7 @@
 										<div class="th th-item">
 											<td class="td-inner">商品</td>
 										</div>
-										
+
 										<div class="th th-changeprice th-price">
 											<td class="td-inner">评论内容</td>
 										</div>
@@ -197,14 +192,14 @@
 														<li class="td td-item">
 															<div class="item-pic">
 																<a href="#" class="J_MakePoint">
-																	<img src="../images/kouhong.jpg_80x80.jpg" class="itempic J_ItemImg">
+																	<img id="img" src="../images/kouhong.jpg_80x80.jpg" class="itempic J_ItemImg">
 																</a>
 															</div>
 															<div class="item-info">
 																<div class="item-basic-info">
-																	<a href="#">
-																		<p id="shopName">美康粉黛醉美唇膏 持久保湿滋润防水不掉色</p>
-																	</a>
+
+																	<p id="shopName">美康粉黛醉美唇膏 持久保湿滋润防水不掉色</p>
+
 																</div>
 															</div>
 														</li>
@@ -225,8 +220,6 @@
 														</ul>
 														<div class="clear"></div>
 													</ul>
-
-													
 
 												</div>
 											</div>
@@ -276,7 +269,7 @@
 																<div class="item-basic-info">
 																	<a href="#">
 																		<p>美康粉黛醉美唇膏 持久保湿滋润防水不掉色</p>
-																		
+
 																	</a>
 																</div>
 															</div>
