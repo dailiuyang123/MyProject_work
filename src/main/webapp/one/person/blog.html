@@ -17,6 +17,9 @@
 		<script type="text/javascript">
 			window.onload = function loads() {
 				var token = getCookie("token");
+				//
+				
+				//
 				if(token) {
 					var baseurl = "http://localhost:8181/MyProject/restUser/findUserById";
 					console.log(token);
@@ -83,7 +86,34 @@
 					return null;
 			}
 			//时间戳 格式化
+			
 		</script>
+		
+		<script type="text/javascript">
+			$(window).load(function(){
+				$.ajax({
+					type: "post",
+					url: "http://localhost:8181/MyProject/article/ArticleList",
+					async: true,
+					data:{"id":"1"},
+					dataType: "json",
+					success: function(results) {
+						var articledata = results.data.list[0];
+						document.getElementById("title").innerHTML=articledata.articleTitle;
+						document.getElementById("content").innerHTML=articledata.articlePictrue;
+						document.getElementById("type").innerHTML=articledata.type;
+						document.getElementById("src").href=articledata.src;
+						
+						console.log(articledata);
+					},
+					error: function() {
+						console.log("失败")
+					}
+				});
+			});
+			
+			
+		</script> 
 	</head>
 
 	<body>
@@ -97,23 +127,23 @@
 		<div class="nav-table">
 			<div class="long-title"><span class="all-goods">全部分类</span></div>
 			<div class="nav-cont">
-				
-					<ul>
-							<li class="index">
-								<a href="#">首页</a>
-							</li>
-							<li class="qc">
-								<a href="../person/blog.html">好物</a>
-							</li>
-							<li class="qc">
-								<a href="../person/blog.html">好文</a>
-							</li>
-							<li class="qc">
-								<a href="#">团购</a>
-							</li>
-							
-						</ul>
-				
+
+				<ul>
+					<li class="index">
+						<a href="#">首页</a>
+					</li>
+					<li class="qc">
+						<a href="../person/blog.html">好物</a>
+					</li>
+					<li class="qc">
+						<a href="../person/blog.html">好文</a>
+					</li>
+					<li class="qc">
+						<a href="#">团购</a>
+					</li>
+
+				</ul>
+
 				<div class="nav-extra">
 					<i class="am-icon-user-secret am-icon-md nav-user"></i><b></b>我的福利
 					<i class="am-icon-angle-right" style="padding-left: 10px;"></i>
@@ -126,23 +156,17 @@
 			<div class="am-u-md-9">
 				<article class="blog-main">
 					<h3 class="am-article-title blog-title">
-        <a href="../home/introduction.html">两张毛爷爷，搞定靓妆容</a>
+        <a href="../home/introduction.html" id="title">两张毛爷爷，搞定靓妆容</a>
       </h3>
-					<h4 class="am-article-meta blog-meta">2014-06-17 09:52</h4>
+					<h4 class="am-article-meta blog-meta">2018-05-05 </h4>
 
 					<div class="am-g blog-content">
 						<div class="am-u-sm-12">
-							<p>年轻的妹子爱美丽，这是人之常情，但是没有足够的经济实力，面对昂贵奢华的护肤品难免囊中羞涩。不过不用担心，年轻的资本就是，不需要投入太多，却依然有俏丽的脸蛋儿~今天小编就给妹子们准备了炙手可热的百元护肤大礼包，看看有没有自己需要的吧！</p>
-
-							<strong class="blog-tit"><p>一张毛爷爷<span>丨</span>基础护肤</p></strong>
-							<div class="Row">
-								<li><img src="../images/blog01.jpg" /></li>
-								<li><img src="../images/blog02.jpg" /></li>
-								<li><img src="../images/blog03.jpg" /></li>
-							</div>
-							<p>百元以内的基础护肤套装，小编给妹子们挑选了洗面奶、爽肤水和面霜，按照洁面和护肤的顺序，大家可以尽情将这些口碑好货加入购物车哦。</p>
-							<p>一向是；平价又好用的露得清洗面奶，加上很大一支感觉怎么都用不完的千纤草丝瓜水，最后用玉兰油面霜锁住面部水分，简直完美！</p>
-
+							<strong class="blog-tit">文章类型：<p id="type"></span>彩妆</p></strong>
+							<p id='content'>年轻的妹子爱美丽，这是人之常情，但是没有足够的经济实力，面对昂贵奢华的护肤品难免囊中羞涩。不过不用担心，年轻的资本就是，不需要投入太多，却依然有俏丽的脸蛋儿~今天小编就给妹子们准备了炙手可热的百元护肤大礼包，看看有没有自己需要的吧！
+							百元以内的基础护肤套装，小编给妹子们挑选了洗面奶、爽肤水和面霜，按照洁面和护肤的顺序，大家可以尽情将这些口碑好货加入购物车哦。
+							一向是；平价又好用的露得清洗面奶，加上很大一支感觉怎么都用不完的千纤草丝瓜水，最后用玉兰油面霜锁住面部水分，简直完美！</p>
+							<a id="src" href='#'>购买连接</a>
 							<strong class="blog-tit"><p>两张毛爷爷<span>丨</span>彩妆</p></strong>
 							<div class="Row">
 								<li><img src="../images/blog04.jpg" /></li>
@@ -184,7 +208,7 @@
 					<section class="am-panel am-panel-default">
 						<div class="am-panel-hd">热门话题</div>
 						<ul class="am-list blog-list">
-						
+
 							<li>
 								<a href="#">
 									<p>[公告]华北、华中部分地区配送延迟</p>
@@ -214,9 +238,9 @@
 		</div>
 
 		<div class="footer" id="foot">
-			
+
 			<script type="text/javascript">
-					$("#foot").load("../common/foot.html");
+				$("#foot").load("../common/foot.html");
 			</script>
 		</div>
 

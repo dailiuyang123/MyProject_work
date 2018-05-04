@@ -40,3 +40,17 @@ CREATE TABLE `tbl_talk` (
   `star` int(11) DEFAULT NULL,
   `dislike` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `tbl_article` (
+  `id` varchar(50) NOT NULL,
+  `article_title` varchar(200) default NULL COMMENT '文章名',
+  `shop_id` varchar(50) default NULL COMMENT '关联商品id',
+  `create_time` datetime default NULL COMMENT '创建日期',
+  `create_user_id` varchar(50) default NULL COMMENT '发布人id',
+  `create_user_name` varchar(100) default NULL COMMENT '发布人名',
+  `src` varchar(200) default NULL COMMENT '文章来源',
+  `article_pictrue` varchar(255) default NULL COMMENT '文章图片',
+  `type` varchar(100) default NULL COMMENT '文章标签',
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
