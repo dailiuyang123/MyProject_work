@@ -99,7 +99,9 @@
 						var list= data.list;
 						var talkone=list[0];
 						document.getElementById("shopName").innerHTML=talkone.shopName;
-						document.getElementById("createDate").innerHTML=talkone.createTime;
+						var dates= new Date(talkone.createTime);
+						var times= dates.getFullYear()+"年"+dates.getMonth()+"月"+dates.getDay();
+						document.getElementById("createDate").innerHTML=times;
 						document.getElementById("content").innerHTML=talkone.content;
 					},
 					error: function() {
