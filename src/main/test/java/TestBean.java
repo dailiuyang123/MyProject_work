@@ -1,4 +1,5 @@
 import com.daily.test.Test2018.Zoo;
+import miniMap.DIYHashMap;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -17,6 +18,14 @@ public class TestBean {
         Zoo zoo=(Zoo) ctx.getBean("zoo");
         System.out.println(zoo.toString());
 
+    }
+
+    @Test
+    public void myMap(){
+        DIYHashMap diyHashMap=new DIYHashMap();
+        diyHashMap.put("hello","world");
+        String hello = diyHashMap.get("hello").toString();
+        System.out.println(hello);
     }
 
 }
